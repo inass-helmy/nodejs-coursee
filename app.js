@@ -1,10 +1,15 @@
 const express = require("express");
 const { getWeather } = require("./getWeather");
+const hbs = require("hbs");
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.set("view engine", "hbs");
+const partialsDirectory = path.join(__dirname, "./partials");
+hbs.registerPartials(partialsDirectory);
+
 app.get("/", (req, res) => {
   res.render("home", {
     title: "Home Page",
