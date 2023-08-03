@@ -26,8 +26,8 @@ form.addEventListener("submit", async (e) => {
     error.textContent = "";
     country.textContent = `Country: ${data.country.toUpperCase()}`;
     await delay(500);
-    forecast.textContent = `Weather: ${data.weatherStatus.current.condition.text} weather and temp equals ${data.weatherStatus.current.temp_c}`;
-    await delay(500);
     coordinates.textContent = `Coordinates: Lat - ${data.weatherStatus.location.lat}, Lon - ${data.weatherStatus.location.lon}`;
+    await delay(500);
+    forecast.textContent = `Weather: ${data.weatherStatus.current.condition.text} weather and temp equals ${data.weatherStatus.current.temp_c}`;
   }
 });
